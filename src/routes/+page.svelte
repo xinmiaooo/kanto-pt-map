@@ -2,6 +2,7 @@
 	import { MapLibre, VectorTileSource, FillLayer, LineLayer } from 'svelte-maplibre-gl';
 	import type { Map } from 'maplibre-gl';
 	import { PMTilesProtocol } from '@svelte-maplibre-gl/pmtiles';
+	import { base } from '$app/paths';
 	import { instantiateDuckDb } from '$lib/duckdb';
 	import { onMount } from 'svelte';
 	import type { MapLayerMouseEvent } from 'maplibre-gl';
@@ -172,7 +173,7 @@
 >
 	<VectorTileSource
 		id="kzone"
-		url="pmtiles:///H30_kzone.pmtiles"
+		url="{`pmtiles://${base}/H30_kzone.pmtiles`}"
 		attribution="<a href='https://www.tokyo-pt.jp/data/01_01' target='_blank'>H30年東京都市圏パーソントリップ調査データ</a>"
 	>
 		<FillLayer
