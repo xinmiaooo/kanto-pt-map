@@ -52,7 +52,7 @@
 
 	async function load_db() {
 		const db = await instantiateDuckDb();
-		await db.registerFileURL('d-1.parquet', `${window.location.origin}/d-1.parquet`, 4, false);
+		await db.registerFileURL('d-1.parquet', `${window.location.origin}${base}/d-1.parquet`, 4, false);
 		const conn = await db.connect();
 		return conn;
 	}
